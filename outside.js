@@ -15,14 +15,27 @@ li.map((item, index, arr) => {
 });
 
 document.addEventListener("click", (e) => {
-  if (
-    li.reduce((acc, val) => {
-      return acc && !val.contains(e.target);
-    }, true)
-  ) {
-    li.map((item) => {
-      item.style.opacity = ".5";
-      span.innerHTML = "";
-    });
-  }
+  // if (
+  //   li.reduce((acc, val) => {
+  //     return acc && !val.contains(e.target);
+  //   }, true)
+  // ) {
+  //   li.map((item) => {
+  //     item.style.opacity = ".5";
+  //     span.innerHTML = "";
+  //   });
+  // }
+
+  li.map((item) => {
+    if (!item.contains(e.target)) {
+      console.log('outside')
+      console.log(e.target)
+      item.style.opacity = '.5'
+    }
+    else {
+      console.log('inside')
+      console.log(e.target)
+    }
+  })
+
 });
